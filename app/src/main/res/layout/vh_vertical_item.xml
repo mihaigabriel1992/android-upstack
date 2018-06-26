@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.image.mozaic.R" />
+
+        <variable
+            name="obj"
+            type="com.image.mozaic.ui.mozaicFragment.VerticalItemViewHolder" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:padding="16dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_profile_notifications"
+            adapter_data="@{obj.horizontalItems.data}"
+            isLoading="@{obj.horizontalItems.isLoading}"
+            item_decoration_color="@{android.R.color.holo_blue_dark}"
+            item_decoration_size="@{com.image.mozaic.R.dimen.decoration_size}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:orientation="horizontal"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
